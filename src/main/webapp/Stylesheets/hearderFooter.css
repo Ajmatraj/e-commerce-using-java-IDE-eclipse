@@ -1,0 +1,546 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root{
+    --bg-color: #2a2a2a;
+    --second-bg-color:#202020;
+    --text-color: #fff;
+    --second-color: #ccc;
+    --h-color: #9da0ae;
+    --p-color: #26283b;
+    --main-color: #414464;
+    --big-font: clamp(30px, 5vw, 90px);
+    --h1-font: clamp(35px, 4vw, 50px);
+    --h2-font: clamp(16px, 2vw, 50px);
+    --h3-font: clamp(14px, 2vw, 40px);
+    --h4-font: clamp(14px, 2vw, 30px);
+    --h5-font: clamp(14px, 1vw, 20px);
+    --p-font: clamp(12px, 5vw, 15px);
+    /* --p-font: clamp(14px,3vh,35px); */
+
+}   
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  }
+  body{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", serif;
+    }
+
+
+.logo-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.nav-sec-1{
+  display: flex;
+  flex-direction: column;
+}
+nav {
+  padding: 5px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  z-index: 1;
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+nav .logo img {
+  height: 25px;
+  width: auto;
+  margin-right: 10px;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+nav ul li {
+  margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Style for the cart-wish container */
+.cart-wish {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wish-list-sec i{
+  margin-right: 10px; 
+  color: #f42b2b; 
+  cursor: pointer;
+}
+
+.cart-list-sec i{
+  margin-right: 10px; 
+  color: #000000; 
+  cursor: pointer;
+}
+.user-login-sec{
+  margin-right: 10px; 
+  color: #000000; 
+  cursor: pointer;
+}
+
+
+
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 1px;
+  background-color: #c7c2c2;
+  display: block;
+  margin: 7px auto;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger-active {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.6s;
+  transform: rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(2) {
+  width: 0px;
+}
+
+.hamburger-active .line:nth-child(1),
+.hamburger-active .line:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(12px);
+}
+
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-5px) rotate(90deg);
+}
+
+.menubar {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  height: 100vh;
+  padding: 20% 0;
+  background: rgba(255, 255, 255);
+  transition: all 0.5s ease-in;
+  z-index: 2;
+}
+.active {
+  left: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.menubar ul {
+  padding: 0;
+  list-style: none;
+}
+.menubar ul li {
+  margin-bottom: 32px;
+}
+
+.menubar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.menubar ul li a:hover {
+  background-color: #f5f5f5;
+}
+@media screen and (max-width: 790px) {
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+}
+
+.drop{
+  border:none;
+  border-radius:5px;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+button:hover{
+  background-color:#ddd;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  background-color:#fff;
+  border-radius:5px;
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+.dropdown-options a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  font-size: 95%;
+  font-weight: 400;
+  border-radius: 5px;
+  padding: 14px 18px;
+ 
+}
+
+.dropdown-options a:hover {
+  color: #000000;
+  background-color:  #f5f5f5;
+  border-radius:5px;
+}
+
+
+
+
+.form-sec button {
+  border: none;
+  background: none;
+  color: #f8f8fe;
+}
+.form-sec button img{
+  width: 17px;
+  margin-top: 3px;
+}
+/* styling of whole input container */
+.form-sec {
+  position: relative;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-inline: 0.8em;
+  border-radius: 30px;
+  transition: border-radius 0.5s ease;
+}
+/* styling of Input */
+.s-input {
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+}
+/* styling of animated border */
+.form-sec:before {
+  content: "";
+  position: absolute;
+  background: var(--h-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  border-radius: 1px;
+  transition: transform 0.3s ease;
+}
+/* Hover on Input */
+.form-sec:focus-within {
+  border-radius: 1px;
+}
+
+input:focus {
+  outline: none;
+}
+/* here is code of animated border */
+.form-sec:focus-within:before {
+  transform: scale(1);
+}
+/* styling of close button */
+/* == you can click the close button to remove text == */
+.reset {
+  border: none;
+  background: none;
+  opacity: 0;
+  visibility: hidden;
+}
+/* close button shown when typing */
+s-input:not(:placeholder-shown) ~ .reset {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+/* footer start  */
+.footer-sec{
+    width: 100%;
+    height: 100%;
+    margin-top: 80px;
+    padding: 80px;
+    /* margin-bottom: 40px; */
+    background-color: #EEEEEE;
+  }
+  .footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    gap: 80px;
+    padding: 20px;
+  }
+  .footer-logo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    width: clamp(100px,100%,300px);
+    gap: 20px; 
+  }
+  .footer-logo h6{
+    font-size: clamp(30px, 2vw,50px);  
+    color: var(--main-color);
+  }
+  .footer-logo p{
+    font-size: var(--p-font);
+      text-align: left; /* Justify the text */
+      display: inherit;
+      display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        width: clamp(100px,100%,300px);
+  }
+  
+  .links-contact-footer li a{
+    text-decoration: none;
+    font-size: var(--p-font);
+    color: var(--main-color);
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  .links-contact-footer li a:focus,
+  .links-contact-footer li a{
+    color: var(--main-color);
+  }
+  
+  .links-contact-footer li a:focus:after,
+  .links-contact-footer li a:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  .links-contact-footer li a:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--main-color);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+  
+  .footer-find{
+    width: clamp(100px,100%,300px);
+  }
+  .find-sec{
+    display: flex;
+    flex: 0;
+    flex-direction: column;
+    width: clamp(100px,100%,300px);
+    gap: 10px;
+  }
+  .find-sec p{
+    flex: 0;
+  }
+  .email-sec{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .email-sec input{
+    flex: 2;
+    width: clamp(100px,100%,300px);
+    height: 50px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .input-container {
+    width: 301px;
+    position: relative;
+  }
+  
+  .input{
+    font-size: var(--p-font);
+    padding: 0.6em 1em;
+    border: none;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    color: #333;
+  }
+  
+  .input:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .input:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input::placeholder {
+    color: #999;
+  }
+  
+  .highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: width 0.3s ease;
+  }
+  
+  .input:focus + .highlight {
+    width: 100%;
+  }
+  
+  /* Optional: Animation on focus */
+  @keyframes input-focus {
+    from {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    }
+  
+    to {
+      transform: scale(1.02);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .input:focus {
+    animation: input-focus 0.3s ease;
+  }
+  
+  
+  .email-sec button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3d405b;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+   }
+   
+   .email-sec button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   .email-sec button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+   .email-sec button:hover span {
+    padding-right: 15px;
+   }
+   
+   .email-sec button:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
+    /* footer end  */
